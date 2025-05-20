@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Account</title>
+        <link rel="icon" type="images/pnj" href="images/spacex.png">
+        <link rel="stylesheet" href="styles/acc.css">
+        
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="logo">
+                SPACEX
+            </div>
+            <div class="items">
+                <a href="home.html">Home</a>
+                <a href="#">Ticket</a>
+                <a href="#">About</a>
+                
+            </div>
+            <div class="login">
+                <a href="home.html">Back</a>
+            </div>
+        </nav>
+        <div class="glass-box">
+          <h2>Welcome, <span id="Username">Username</span>!</h2>
+      
+          <div class="user-info">
+            <h3>Account Details</h3>
+            <p><strong>Email:</strong> <span id="email">user@example.com</span></p>
+            <button onclick="Logout()"><a href="login.html">Logout</a></button>
+            
+          </div>
+      
+          <div class="booking-history">
+            <h3>Your Booking</h3>
+            <ul>
+              <li>Booking #1: Date: 2025-04-10, Time: 10:00 AM</li>
+            </ul>
+            <button onclick="bookTickets()"><a href="Ticket.html">Book New Ticket</a></button>
+          </div>
+        </div>
+      </body>
+      
+</html>    

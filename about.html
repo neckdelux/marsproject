@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey to Mars - SpaceX</title>
+    <link rel="icon" type="images/pnj" href="images/spacex.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/additional.css">
+    <script src="scripts/updated.js" defer=""></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            SPACEX
+        </div>
+        <div class="items">
+            <a href="home.html">Home</a>
+            <a href="booking.html">Ticket</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="login">
+            <a href="login.html">Login</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <div class="stars" id="starsContainer"></div>
+    
+    
+    <div class="About" id="about">
+        <div class="text_abt"> 
+            <h1>About</h1>
+        </div>
+        <div class="box_abt">
+            <div class="box_abt_email"> 
+                <h1 id="email">marsmission@spacex.com</h1>
+            </div>
+            <div class="box_abt_cpy" id="cpy" onclick="copyEmail()">
+                <h1>Copy</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="social_abt">
+        <div class="num_abt">
+            <div class="num_abt_phone">
+            <h1>+1 800 MARS NOW</h1>
+            </div>
+            <div class="num_abt_addr">
+            <h1>Based in California</h1>    
+            </div>
+        </div>
+        <div class="account_abt">
+            <div class="twitter">
+            <h1>Twitter</h1>
+            </div>
+            <div class="linkedin">
+            <h1>LinkedIn</h1>
+            </div>
+            <div class="instagram">
+            <h1>Instagram</h1>
+            </div>
+            <div class="reddit">
+            <h1>Reddit</h1>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Additional content starts here -->
+    <div class="mission-section">
+        <h2>Our Mars Mission</h2>
+        <div class="mission-content">
+            <div class="mission-text">
+                <p>SpaceX was founded with the ultimate goal of enabling human life on Mars. Our Mars program aims to establish the first sustainable human settlement on the Red Planet by 2030, making humanity a multi-planetary species.</p>
+                <p>Using our revolutionary Starship spacecraft, we plan to transport the first pioneers to Mars within this decade, beginning the process of building a permanent human presence.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="timeline-section">
+        <h2>Mission Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>First Cargo Missions</h3>
+                    <p>Initial unmanned supply missions delivering infrastructure components to Mars surface.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-content">
+                    <h3>Construction Begins</h3>
+                    <p>Robotic systems begin constructing habitation modules and life support infrastructure.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2027</div>
+                <div class="timeline-content">
+                    <h3>Energy Systems</h3>
+                    <p>Deployment of solar arrays and nuclear power systems for sustainable energy generation.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2028</div>
+                <div class="timeline-content">
+                    <h3>Crew Selection</h3>
+                    <p>Final selection and training of the first human crew for Mars mission.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2030</div>
+                <div class="timeline-content">
+                    <h3>First Human Landing</h3>
+                    <p>Historic arrival of first human crew to begin permanent settlement operations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long does it take to travel to Mars?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The journey to Mars takes approximately 6-8 months using our current propulsion technology. Future advancements may reduce this travel time.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How will humans survive on Mars?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our habitation modules include advanced life support systems, water recycling, and oxygen generation. Initial settlements will use a combination of shipped supplies and locally produced resources.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I apply to be a Mars colonist?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We are currently accepting applications for our Mars Pioneer Program. Candidates should have expertise in fields such as engineering, medicine, agriculture, or construction.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is the long-term vision for Mars?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our long-term vision includes establishing a self-sustaining city of one million people on Mars, with its own economy and manufacturing capabilities, possibly leading to terraforming efforts in the far future.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="newsletter-section">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest updates on our Mars mission.</p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="newsletter-message"></div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">SPACEX</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 SpaceX. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="copyConfirmation">Email copied to clipboard!</div>
+</body>
+</html>

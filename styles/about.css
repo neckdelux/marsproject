@@ -1,0 +1,63 @@
+#about {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 110px;
+  margin-bottom: 4vw;
+  align-items: center;
+}
+
+
+
+.text_abt {
+  background-color: ;
+  font-size: 2.5vw;
+}
+
+#about h1 {
+  font-weight: normal;
+}
+
+.box_abt {
+  width: 38vw;
+  border-radius: 3vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  border: 0.2vw solid #ff4500;
+  font-size: 0.75vw;
+  background: linear-gradient( to right, #ff4500 0%, black 100%);
+  padding: 2vw;
+  justify-content: space-between;
+}
+
+.social_abt {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 12vw 0 12vw;
+}
+
+.num_abt h1 {
+  font-weight: normal;
+  color: #ffffff70;
+  font-size: 1.5vw;
+}
+
+
+.account_abt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 1vw;
+  column-gap: 16VW;
+  font-size: 1vw;
+}
+
+.account_abt h1 {
+  font-weight: normal;
+}
+
+.num_abt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

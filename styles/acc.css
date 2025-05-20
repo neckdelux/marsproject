@@ -1,0 +1,165 @@
+/* ACCOUNT PAGE STYLES */
+
+body {
+    background-image: url('../images/pexels-pixabay-2156.jpg'); /* 👈 update the path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .glass-box {
+    background: rgba(17, 17, 17, 0.8); /* dark + semi-transparent */
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    text-align: left;
+  
+    backdrop-filter: blur(10px);
+    
+    
+    border: 1px solid #ff4500(255, 255, 255);
+    box-shadow: 0 0 50px #ff4400(0, 0, 0, 0.5);
+  }
+  
+ 
+  .nav {
+    background-color: rgba(17, 17, 17, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navbar Items */
+.items {
+    display: flex;
+    gap: 30px;
+}
+
+.items a,
+.login a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.items a:hover,
+.login a:hover {
+    color: #ff4500;
+}
+
+/* Login Button */
+.login a {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: all 0.3s ease-in-out;
+}
+
+.login a:hover {
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+
+
+/* Container for account */
+.account-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+}
+
+/* Welcome text */
+.account-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff4500;
+}
+
+.account-container h2 span {
+    color: white;
+}
+
+/* Section titles */
+.account-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-left: 5px solid #ff4500;
+    padding-left: 10px;
+}
+
+/* Info blocks */
+.user-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Booking list */
+.booking-history ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.booking-history li {
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid #ff4500;
+}
+
+/* Buttons */
+button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #ff4500;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4500;
+    color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    padding-left: 40px;
+}
+.login {
+    padding-right: 40px;
+}

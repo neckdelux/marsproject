@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars Ticket Booking</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0c0c14;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.items {
+  display: flex;
+  gap: 30px;
+}
+
+.items a, .login a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.items a:hover, .login a:hover {
+  color: #ff3a2f;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.booking-section {
+  padding: 30px 0;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.booking-card {
+  background: rgba(25, 25, 36, 0.8);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.destination {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: right;
+  color: #ff3a2f;
+}
+
+.price-per {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.form-section {
+  background: rgba(25, 25, 36, 0.8);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  background: rgba(30, 30, 45, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #ff3a2f;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-col {
+  flex: 1;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ff3a2f, #ff7b00);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 58, 47, 0.3);
+}
+
+.flight-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.flight-time {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.flight-date {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.flight-duration {
+  text-align: right;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.flight-price {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  color: #ff3a2f;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.next-button {
+  background: linear-gradient(135deg, #ff3a2f, #ff7b00);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.next-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 58, 47, 0.3);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .trip-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .price {
+    margin-top: 15px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="stars" id="starsContainer"></div>
+  
+  <nav class="nav">
+    <div class="logo">
+      SPACEX
+    </div>
+    <div class="items">
+      <a href="home.html">Home</a>
+      <a href="booking.html">Ticket</a>
+      <a href="about/about.html">About</a>
+    </div>
+    <div class="login">
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="booking-section">
+      <a href="#" class="back-link">← Back</a>
+      
+      <div class="booking-card">
+        <div class="trip-info">
+          <div>
+            <div class="destination">Earth - G-001 ⇄ Mars - HW023</div>
+            <div class="date">Departure: 15 Dec, 2021 <span style="margin-left: 20px;">Return: 10 May, 2022</span></div>
+          </div>
+          <div>
+            <div class="price">$9,650</div>
+            <div class="price-per">per 1 person</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-header">
+          <div class="form-title">Departure</div>
+          <a href="#" style="color: #ff3a2f; text-decoration: none; font-size: 14px;">Change</a>
+        </div>
+        
+        <div class="flight-detail">
+          <div>
+            <div class="flight-date">15 Dec, 2021</div>
+            <div class="flight-time">03:55</div>
+          </div>
+          <div style="text-align: center;">⟶</div>
+          <div>
+            <div class="flight-date">16 Jan, 2022</div>
+            <div class="flight-time">15:00</div>
+          </div>
+          <div>
+            <div class="flight-duration">31 days in flight</div>
+            <div class="flight-price">$4,800</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-header">
+          <div class="form-title">Return</div>
+          <a href="#" style="color: #ff3a2f; text-decoration: none; font-size: 14px;">Change</a>
+        </div>
+        
+        <div class="flight-detail">
+          <div>
+            <div class="flight-date">10 April, 2022</div>
+            <div class="flight-time">03:55</div>
+          </div>
+          <div style="text-align: center;">⟶</div>
+          <div>
+            <div class="flight-date">10 May, 2022</div>
+            <div class="flight-time">15:00</div>
+          </div>
+          <div>
+            <div class="flight-duration">30 days in flight</div>
+            <div class="flight-price">$4,850</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-header">
+          <div class="form-title">Login Information</div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" required>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-header">
+          <div class="form-title">Credit Card Information</div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label class="form-label">Card Number</label>
+            <input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Expiration Date</label>
+                <input type="text" class="form-control" placeholder="MM/YY" required>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">CVV</label>
+                <input type="text" class="form-control" placeholder="XXX" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cardholder Name</label>
+            <input type="text" class="form-control" required>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-header">
+          <div class="form-title">Passport Information</div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label class="form-label">Passport ID</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Issue Date</label>
+                <input type="date" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Expiration Date</label>
+                <input type="date" class="form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country of Issue</label>
+            <input type="text" class="form-control" required>
+          </div>
+        </form>
+      </div>
+      
+      <div class="footer">
+        <div class="info-text">
+          <span>You cannot book a one way ticket.</span><br>
+          <span>The ticket price includes a round-trip flight.</span>
+        </div>
+        <button class="next-button">Next step</button>
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

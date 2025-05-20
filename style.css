@@ -1,0 +1,401 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f0f1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.designer-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.designer-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.designer-text span {
+  color: #8a8a9a;
+  font-size: 14px;
+}
+
+.designer-text .available {
+  color: #22c55e;
+  margin-left: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #ff3a2f;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #555;
+  color: white;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px 0;
+  position: relative;
+  min-height: 80vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ff3a2f;
+}
+
+.buy-btn {
+  background-color: #ff3a2f;
+  color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  margin-left: 50px;
+  box-shadow: 0 10px 25px rgba(255, 58, 47, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 58, 47, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 58, 47, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 58, 47, 0);
+  }
+}
+
+.curved-line {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  left: 150px;
+  top: 300px;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.planet {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff3a2f, #680000);
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  box-shadow: 0 0 50px rgba(255, 58, 47, 0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.ticket {
+  width: 250px;
+  height: 400px;
+  background-color: rgba(20, 20, 35, 0.9);
+  border-radius: 15px;
+  position: relative;
+  z-index: 3;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transform: rotate(-10deg);
+  animation: hover 4s ease-in-out infinite;
+}
+
+@keyframes hover {
+  0% {
+    transform: rotate(-10deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-10deg) translateY(-15px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(0px);
+  }
+}
+
+.ticket img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.ticket-info {
+  font-size: 12px;
+  color: #8a8a9a;
+}
+
+.ticket-info h4 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.barcode {
+  width: 100%;
+  height: 60px;
+  background: repeating-linear-gradient(90deg, #000, #000 3px, #fff 3px, #fff 6px);
+  margin-top: 15px;
+}
+
+.mission-badge {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ff3a2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 50px);
+  z-index: 3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mission-badge img {
+  width: 70%;
+}
+
+.pricing-section {
+  padding: 50px 0;
+  background-color: rgba(15, 15, 26, 0.8);
+  border-top-left-radius:  300px;
+  border-top-right-radius: 300px;
+  margin-top: -100px;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #ff3a2f;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.pricing-card {
+  background-color: #1c1c2e;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+.pricing-card.featured {
+  background-color: #331a17;
+}
+
+.plan-name {
+  font-size: 2rem;
+  color: #ff3a2f;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.price-suffix {
+  font-size: 1rem;
+  color: #8a8a9a;
+}
+
+.star {
+  color: #ff3a2f;
+  font-size: 2rem;
+  position: absolute;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  top: 20%;
+  right: 20%;
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+  bottom: 30%;
+  left: 15%;
+  animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.astronaut {
+  position: absolute;
+  right: 50px;
+  bottom: 200px;
+  width: 400px;
+  height: 400px;
+  background: url('/api/placeholder/400/400') no-repeat center center;
+  background-size: cover;
+  z-index: 2;
+  animation: float-astronaut 8s ease-in-out infinite;
+}
+
+@keyframes float-astronaut {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.rocket {
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  transform: rotate(45deg);
+  animation: rocket-move 15s linear infinite;
+}
+
+@keyframes rocket-move {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+  }
+  100% {
+    transform: translateX(1200px) translateY(-600px) rotate(45deg);
+  }
+}
