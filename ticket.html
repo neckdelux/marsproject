@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceX Ticket</title>
+  <link rel="stylesheet" href="styles/ticket.css">
+
+</head>
+<body>
+  <div class="stars" id="starsContainer"></div>
+  
+  <nav class="nav">
+    <div class="logo">
+        SPACEX
+    </div>
+    <div class="items">
+        <a href="home.html">Home</a>
+        <a href="booking.html">Ticket</a>
+        <a href="about.html">About</a>
+        
+    </div>
+    <div class="login">
+        <a href="login.html">Login</a>
+        
+    </div>
+  </nav>
+  
+  <div class="container">
+    <div class="ticket-container">
+      <div class="ticket-header">
+        <div>
+          <a href="booking.html" class="home-button">Booking page</a>
+        </div>
+
+      </div>
+      
+      <div class="ticket-content">
+        <div class="mars"></div>
+        <div class="tabs">
+        </div>
+        
+        <div class="invite-card-container">
+          <div class="invite-corner-square"></div>
+          <div class="invite-card">
+            <div class="invite-title">Your Mars mission number —</div>
+            <div class="invite-number">MX30-1528</div>
+            <div class="dots">...............................</div>
+            
+            <div class="ticket-level">
+              <div class="level-basic">MARS</div>
+              <div class="level-knowledge">EXPEDITION</div>
+              <div class="knowledge-underline"></div>
+            </div>
+            
+            <div class="brand-logo">
+              SPACEX
+            </div>
+          </div>
+          <div class="ticket-corner-notch"></div>
+        </div>
+        
+        <div class="ticket-info">
+          TICKET TO MARS EXPEDITION. EARTH-MARS RETURN FLIGHT. INCLUDES ONE MONTH STAY 
+          AT THE MARS COLONY BASE. ACCESS TO ALL FACILITIES, EXCURSIONS AND SCIENTIFIC 
+          ACTIVITIES. DEPARTS FROM OLYMPUS LAUNCH PAD - EARTH ON JUNE 25, 2030.
+        </div>
+      </div>
+      
+      <div class="ticket-description">
+        <div class="description-left">
+          <div class="description-text">
+            Experience the journey to the red planet with SpaceX's Mars colonization program. 
+            This ticket grants you passage on our interplanetary spacecraft with all necessary 
+            accommodations for your stay on Mars.
+          </div>
+          
+          <div class="more-info">
+            <div class="asterisk">*</div>
+            <div class="tab">FLIGHT DETAILS
+                
+            </div>
+          </div>
+        </div>
+        
+        <div class="description-right">
+          <div class="qr-code-container">
+            <div class="qr-code">
+              <div class="qr-code-inner">
+                <div class="spacex-qr-logo">SPACEX</div>
+              </div>
+            </div>
+            <div class="qr-code-text">PAYMENT SUCCESS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Create random stars
+    window.onload = function() {
+      const starsContainer = document.getElementById('starsContainer');
+      const numStars = 200;
+      
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random size between 1px and 3px
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // Random animation delay
+        star.style.animationDelay = `${Math.random() * 4}s`;
+        
+        // Random brightness
+        const brightness = Math.random() * 0.7 + 0.3;
+        star.style.opacity = brightness;
+        
+        starsContainer.appendChild(star);
+      }
+    };
+    
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
