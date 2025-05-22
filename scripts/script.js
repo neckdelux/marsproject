@@ -72,6 +72,9 @@
                     welcomeText.style.opacity = 0;
                 }
             }
+
+               // Initialize mobile menu
+    initMobileMenu();
         });
 
 // Initialize mobile menu functionality
