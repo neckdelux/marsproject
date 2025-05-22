@@ -264,6 +264,9 @@ a {
     .hero-text h1 {
         font-size: 14vw;
     }
+    .hero-text-outline{
+        font-size: 14vw;
+    }
     
     .planet-container {
         width: 600px;
