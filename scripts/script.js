@@ -73,3 +73,25 @@
                 }
             }
         });
+
+// Initialize mobile menu functionality
+function initMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const items = document.querySelector('.items');
+    
+    if (hamburger && items) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            items.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Optional: add active class to hamburger
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !items.contains(e.target) && items.classList.contains('active')) {
+                items.classList.remove('active');
+                hamburger.classList.remove('active'); // Optional: remove active class from hamburger
+            }
+        });
+    }
+}
