@@ -298,4 +298,14 @@ a {
     .hamburger {
     display: flex;
   }
+    p{
+        font-size: 4.8vw;
+    }
+    .book-button {
+        width: 58vw;
+    }
+    .button-arrow span {
+  width: 6vw;
+  height: 6vw;
+    }
 }
