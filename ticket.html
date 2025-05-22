@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpaceX Ticket</title>
   <link rel="stylesheet" href="styles/ticket.css">
+  <link rel="stylesheet" href="styles/additional.css">
 
 </head>
 <body>
@@ -24,6 +25,11 @@
         <a href="login.html">Login</a>
         
     </div>
+            <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
   </nav>
   
   <div class="container">
@@ -45,7 +51,7 @@
           <div class="invite-card">
             <div class="invite-title">Your Mars mission number —</div>
             <div class="invite-number">MX30-1528</div>
-            <div class="dots">...............................</div>
+            <div class="dots">............................</div>
             
             <div class="ticket-level">
               <div class="level-basic">MARS</div>
@@ -99,6 +105,42 @@
   </div>
   
   <script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navItems = document.querySelector('.items');
+    const login = document.querySelector('.login');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navItems.classList.toggle('active');
+        
+        // Toggle login link in mobile menu
+        if (navItems.classList.contains('active')) {
+            // Clone the login link and add it to the mobile menu
+            const mobileLogin = login.cloneNode(true);
+            mobileLogin.classList.add('mobile-login');
+            navItems.appendChild(mobileLogin);
+        } else {
+            // Remove the cloned login link when menu is closed
+            const mobileLogin = navItems.querySelector('.mobile-login');
+            if (mobileLogin) {
+                navItems.removeChild(mobileLogin);
+            }
+        }
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.items a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navItems.classList.remove('active');
+            const mobileLogin = navItems.querySelector('.mobile-login');
+            if (mobileLogin) {
+                navItems.removeChild(mobileLogin);
+            }
+        });
+    });
+
     // Create random stars
     window.onload = function() {
       const starsContainer = document.getElementById('starsContainer');
