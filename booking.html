@@ -6,6 +6,7 @@
   <title>Space Tickets</title>
   <link rel="icon" type="images/pnj" href="images/spacex.png">
   <link rel="stylesheet" href="stylebook.css">
+  <link rel="stylesheet" href="styles/additional.css">
 </head>
 <body>
    
@@ -248,13 +249,44 @@
   <script>
    
     
+      // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navItems = document.querySelector('.items');
+    const login = document.querySelector('.login');
     
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navItems.classList.toggle('active');
+        
+        // Toggle login link in mobile menu
+        if (navItems.classList.contains('active')) {
+            // Clone the login link and add it to the mobile menu
+            const mobileLogin = login.cloneNode(true);
+            mobileLogin.classList.add('mobile-login');
+            navItems.appendChild(mobileLogin);
+        } else {
+            // Remove the cloned login link when menu is closed
+            const mobileLogin = navItems.querySelector('.mobile-login');
+            if (mobileLogin) {
+                navItems.removeChild(mobileLogin);
+            }
+        }
+    });
     
-    // Call the function when the page loads
+    // Close menu when clicking on a link
+    document.querySelectorAll('.items a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navItems.classList.remove('active');
+            const mobileLogin = navItems.querySelector('.mobile-login');
+            if (mobileLogin) {
+                navItems.removeChild(mobileLogin);
+            }
+        });
+    });
+    
+    // Create random stars
     window.onload = function() {
-      createStars();
-    };
-      // Create random stars
       const starsContainer = document.getElementById('starsContainer');
         const numStars = 200;
         
@@ -329,6 +361,7 @@
                 }
             }
         });
+    };
 
   </script>
 </body>
