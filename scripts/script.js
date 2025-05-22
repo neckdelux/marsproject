@@ -1,7 +1,9 @@
-   // Create random stars
-        const starsContainer = document.getElementById('starsContainer');
-        const numStars = 200;
-        
+// Create random stars
+document.addEventListener('DOMContentLoaded', function() {
+    const starsContainer = document.getElementById('starsContainer');
+    const numStars = 200;
+    
+    if (starsContainer) {
         for (let i = 0; i < numStars; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
@@ -24,7 +26,14 @@
             
             starsContainer.appendChild(star);
         }
-        
+    }
+    
+    // Initialize the FAQ accordions
+
+    
+    // Initialize mobile menu
+    initMobileMenu();
+});
         // Scroll animation - MODIFIED FOR MOVEMENT FROM CENTER TO RIGHT
         const planetContainer = document.getElementById('planetContainer');
         const welcomeText = document.getElementById('welcomeText');
@@ -72,11 +81,7 @@
                     welcomeText.style.opacity = 0;
                 }
             }
-
-               // Initialize mobile menu
-    initMobileMenu();
         });
-
 // Initialize mobile menu functionality
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
